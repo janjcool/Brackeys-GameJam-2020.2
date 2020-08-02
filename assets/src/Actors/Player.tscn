@@ -1,0 +1,358 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://assets/src/Actors/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/Player/pixel guy.png" type="Texture" id=2]
+[ext_resource path="res://assets/guns/FAMAS 10frames 16fps.png" type="Texture" id=3]
+[ext_resource path="res://assets/guns/P90 11frames 12fps.png" type="Texture" id=4]
+[ext_resource path="res://assets/guns/Six12 SD 4frames 6fps.png" type="Texture" id=5]
+[ext_resource path="res://assets/guns/417 13frames 10fps.png" type="Texture" id=6]
+[ext_resource path="res://assets/guns/AWP 30frames 12fps.png" type="Texture" id=7]
+[ext_resource path="res://assets/guns/Desert Eagle 2frames 5fps.png" type="Texture" id=8]
+[ext_resource path="res://assets/src/Actors/PlayerGun.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28, 54 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "PlayerIdle"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 3 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "PlayerJump"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "PlayerRunLeft"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "PlayerRunRight"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 6, 7 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Gun417"
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/417:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "GunAWP"
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/AWP:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "GunDesertEagle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/DesertEagle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "GunFAMAS"
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/FAMAS:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "GunP90"
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/P90:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "GunSix12"
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/Six12:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Shoot417"
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/417:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "ShootAWP"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/AWP:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27, 28, 1 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "ShootDesertEagle"
+length = 0.3
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/DesertEagle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "ShootFAMAS"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/FAMAS:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "ShootP90"
+length = 0.45
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/P90:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "ShootSix12"
+length = 0.2
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("GunSprites/Six12:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+collision_mask = 64
+script = ExtResource( 1 )
+speed = Vector2( 800, 1000 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2 )
+shape = SubResource( 1 )
+
+[node name="PlayerSprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 9
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/PlayerIdle = SubResource( 2 )
+anims/PlayerJump = SubResource( 3 )
+anims/PlayerRunLeft = SubResource( 4 )
+anims/PlayerRunRight = SubResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_left = 0.0
+drag_margin_top = 0.25
+drag_margin_bottom = 0.35
+
+[node name="GunPos" type="Position2D" parent="."]
+script = ExtResource( 9 )
+offset = Vector2( -25, -10 )
+
+[node name="AnimationGun" type="AnimationPlayer" parent="GunPos"]
+anims/Gun417 = SubResource( 7 )
+anims/GunAWP = SubResource( 8 )
+anims/GunDesertEagle = SubResource( 9 )
+anims/GunFAMAS = SubResource( 10 )
+anims/GunP90 = SubResource( 11 )
+anims/GunSix12 = SubResource( 17 )
+anims/Shoot417 = SubResource( 6 )
+anims/ShootAWP = SubResource( 12 )
+anims/ShootDesertEagle = SubResource( 13 )
+anims/ShootFAMAS = SubResource( 14 )
+anims/ShootP90 = SubResource( 15 )
+anims/ShootSix12 = SubResource( 16 )
+
+[node name="GunSprites" type="Node" parent="GunPos"]
+
+[node name="417" type="Sprite" parent="GunPos/GunSprites"]
+texture = ExtResource( 6 )
+vframes = 7
+hframes = 2
+
+[node name="AWP" type="Sprite" parent="GunPos/GunSprites"]
+visible = false
+texture = ExtResource( 7 )
+vframes = 10
+hframes = 3
+frame = 24
+
+[node name="DesertEagle" type="Sprite" parent="GunPos/GunSprites"]
+visible = false
+texture = ExtResource( 8 )
+vframes = 2
+
+[node name="FAMAS" type="Sprite" parent="GunPos/GunSprites"]
+visible = false
+texture = ExtResource( 3 )
+vframes = 5
+hframes = 2
+
+[node name="P90" type="Sprite" parent="GunPos/GunSprites"]
+visible = false
+texture = ExtResource( 4 )
+vframes = 6
+hframes = 2
+frame = 2
+
+[node name="Six12" type="Sprite" parent="GunPos/GunSprites"]
+visible = false
+texture = ExtResource( 5 )
+vframes = 4

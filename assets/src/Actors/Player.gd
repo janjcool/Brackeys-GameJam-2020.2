@@ -8,7 +8,7 @@ func _physics_process(delta: float) -> void:
 	velocity = calculate_move_velocity(velocity, direction, speed, is_jump_interrupted)
 	velocity = move_and_slide(velocity, Vector2.UP)
 	animation = AnimationChooser(animation, velocity)
-	print(animation)
+	#print(animation)
 	get_node("AnimationPlayer").play(animation)
 
 func get_direction() -> Vector2:
@@ -19,7 +19,9 @@ func get_direction() -> Vector2:
 
 func AnimationChooser(animation, velocity):
 	if not velocity.y == 0:
-		print(velocity.y)
+		#print(velocity.y)
+		animation = "PlayerJump"
+	if not Input.get_action_strength("jump") == 0:
 		animation = "PlayerJump"
 	elif velocity.x > 0:
 		animation = "PlayerRunRight"
@@ -42,5 +44,5 @@ func calculate_move_velocity(
 	if direction.y == -1.0:
 		new_velocity.y = speed.y * direction.y
 	if is_jump_interrupted:
-		new_velocity.y = 0.0
+		new_velocity.y = gravity * 0.0
 	return new_velocity

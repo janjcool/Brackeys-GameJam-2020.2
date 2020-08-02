@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Actor",
 "language": "GDScript",
-"path": "res://src/Actors/Actor.gd"
+"path": "res://assets/src/Actors/Actor.gd"
 } ]
 _global_script_class_icons={
 "Actor": ""
@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Brackeys Jam 2020.2"
-run/main_scene="res://src/Scenes/LevelTemplate.tscn"
+run/main_scene="res://assets/src/Scenes/LevelTemplate.tscn"
 config/icon="res://icon.png"
 
 [input]
