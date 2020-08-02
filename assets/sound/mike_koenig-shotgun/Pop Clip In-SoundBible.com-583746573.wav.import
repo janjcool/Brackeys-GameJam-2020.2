@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pop Clip In-SoundBible.com-583746573.wav-9101d67cbbfec82c54142df928fca616.sample"
+
+[deps]
+
+source_file="res://assets/sound/mike_koenig-shotgun/Pop Clip In-SoundBible.com-583746573.wav"
+dest_files=[ "res://.import/Pop Clip In-SoundBible.com-583746573.wav-9101d67cbbfec82c54142df928fca616.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/minigun.ogg-a62e2139febfb96200972ca39d447489.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/q009-sounds/q009/minigun.ogg"
+dest_files=[ "res://.import/minigun.ogg-a62e2139febfb96200972ca39d447489.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Loading Shotgun-SoundBible.com-1501931317.wav-22ca58c2ca9811544fc6298de77d1c6b.sample"
+
+[deps]
+
+source_file="res://assets/sound/mike_koenig-shotgun/Loading Shotgun-SoundBible.com-1501931317.wav"
+dest_files=[ "res://.import/Loading Shotgun-SoundBible.com-1501931317.wav-22ca58c2ca9811544fc6298de77d1c6b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
