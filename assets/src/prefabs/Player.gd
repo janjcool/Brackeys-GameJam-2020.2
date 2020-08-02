@@ -1,6 +1,6 @@
 extends Actor
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var animation: = "PlayerJump"
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and velocity.y < 0.0
 	var direction: = get_direction()
@@ -21,7 +21,7 @@ func AnimationChooser(animation, velocity):
 	if not velocity.y == 0:
 		#print(velocity.y)
 		animation = "PlayerJump"
-	if not Input.get_action_strength("jump") == 0:
+	if not Input.get_action_strength("jump") == 0 and not is_on_floor():
 		animation = "PlayerJump"
 	elif velocity.x > 0:
 		animation = "PlayerRunRight"

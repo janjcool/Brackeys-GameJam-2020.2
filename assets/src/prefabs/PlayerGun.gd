@@ -1,10 +1,13 @@
 extends Position2D
 
+export var offset = Vector2(25, 10)
+export var CurrentGun = "417"
+export var BulletSpeed = 100
+
 var PlayerPos
 var GunPos
 var CurrentGunNode
-export var offset = Vector2(25, 10)
-export var CurrentGun = "417"
+var bullet = preload("res://assets/src/prefabs/bullet.tscn")
 var PathToGuns = "../GunPos/GunSprites/"
 var AnimationSprites = {
 	"417": {
@@ -33,19 +36,24 @@ var AnimationSprites = {
 		},
 }
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	PlayerPos = get_owner().get_global_position()
 	CurrentGunNode = get_node(AnimationSprites[CurrentGun]["NodePath"])
 	
 	look_at(get_global_mouse_position())
 	CurrentGunNode.set_global_rotation(get_global_rotation()-3)
 	CurrentGunNode.set_global_position(get_global_position()-offset)
-	FlipSprite(get_global_rotation(), CurrentGunNode)
+	FlipSprite(CurrentGunNode)
 	
-	print(get_global_rotation())
+	if Input.is_action_pressed("fire"):
+		var bullet_instance = bullet.instance()
+		bullet_instance.position = get_global_position()
+		bullet_instance.rotation_degrees = get_global_rotation()
+		bullet_instance.apply_impulse(Vector2(), Vector2(BulletSpeed, 0).rotated(rotation))
+		get_tree().get_root().add_child(bullet_instance)
 
-func FlipSprite(GunRotation, CurrentGunNode):
-	if GunRotation > -1.5 and GunRotation < 1.5:
+func FlipSprite(CurrentGunNode):
+	if get_global_rotation() > -1.5 and get_global_rotation() < 1.5:
 		CurrentGunNode.set_flip_v(true)
 	else:
 		CurrentGunNode.set_flip_v(false)
