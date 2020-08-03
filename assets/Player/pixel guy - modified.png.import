@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ARMob.png-704b028fdc8c3966db71713194a4de63.stex"
+path="res://.import/pixel guy - modified.png-91332bbcc5faeeab5d84104bd701bd63.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/ARMob.png"
-dest_files=[ "res://.import/ARMob.png-704b028fdc8c3966db71713194a4de63.stex" ]
+source_file="res://assets/Player/pixel guy - modified.png"
+dest_files=[ "res://.import/pixel guy - modified.png-91332bbcc5faeeab5d84104bd701bd63.stex" ]
 
 [params]
 

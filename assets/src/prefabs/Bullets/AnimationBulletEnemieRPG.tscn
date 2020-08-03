@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/sound/q009-sounds/q009/explosion.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/src/prefabs/Bullets/AnimationBulletEnemieRPG.gd" type="Script" id=2]
+[ext_resource path="res://assets/guns/Bullets/Explosion_Particle.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+length = 1.15
+step = 0.02
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.14, 0.16 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayer/AudioPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationPlayer/Sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.24 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="AnimationBulletEnemieRPG" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Explosion = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="AnimationPlayer"]
+visible = false
+texture = ExtResource( 3 )
+hframes = 9
+frame = 8
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="AnimationPlayer"]
+stream = ExtResource( 1 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

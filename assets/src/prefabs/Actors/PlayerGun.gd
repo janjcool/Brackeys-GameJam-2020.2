@@ -16,7 +16,7 @@ var CurrentGunNode
 var PrevouiseGun = CurrentGun
 var CurrentGunID
 var CanFire = true
-var bullet = preload("res://assets/src/prefabs/bullet.tscn")
+var bullet = preload("res://assets/src/prefabs/Bullets/bullet.tscn")
 var PathToGuns = "../GunPos/GunSprites/"
 var AnimationSprites = {
 	"417": {
@@ -31,7 +31,8 @@ var AnimationSprites = {
 		"GotGun": true,
 		"FirePoint": Vector2(20, -8),
 		"MagazinSize": 10,
-		"RunTimeMagazinSize": 10
+		"RunTimeMagazinSize": 10,
+		"BulletType": "Normal"
 		},
 	"AWP": {
 		"Animation time": 0.30,
@@ -42,10 +43,11 @@ var AnimationSprites = {
 		"BulletSpeed": 2500,
 		"BulletLifeTime": 30,
 		"BulletDamage": 15,
-		"GotGun": false,
+		"GotGun": true,
 		"FirePoint": Vector2(20, -7),
 		"MagazinSize": 7,
-		"RunTimeMagazinSize": 7
+		"RunTimeMagazinSize": 7,
+		"BulletType": "Normal"
 		},
 	"DesertEagle": {
 		"Animation time": 0.30,
@@ -59,7 +61,8 @@ var AnimationSprites = {
 		"GotGun": true,
 		"FirePoint": Vector2(0, -10),
 		"MagazinSize": 10,
-		"RunTimeMagazinSize": 10
+		"RunTimeMagazinSize": 10,
+		"BulletType": "Normal"
 		},
 	"FAMAS": {
 		"Animation time": 0.50,
@@ -70,10 +73,11 @@ var AnimationSprites = {
 		"BulletSpeed": 1000,
 		"BulletLifeTime": 25,
 		"BulletDamage": 7,
-		"GotGun": false,
+		"GotGun": true,
 		"FirePoint": Vector2(15, -5),
 		"MagazinSize": 50,
-		"RunTimeMagazinSize": 50
+		"RunTimeMagazinSize": 50,
+		"BulletType": "Normal"
 		},
 	"P90": {
 		"Animation time": 0.45,
@@ -84,10 +88,11 @@ var AnimationSprites = {
 		"BulletSpeed": 1000,
 		"BulletLifeTime": 25,
 		"BulletDamage": 5,
-		"GotGun": false,
+		"GotGun": true,
 		"FirePoint": Vector2(15, -5),
 		"MagazinSize": 70,
-		"RunTimeMagazinSize": 70
+		"RunTimeMagazinSize": 70,
+		"BulletType": "Normal"
 		},
 	"Six12": {
 		"Animation time": 0.20,
@@ -95,13 +100,14 @@ var AnimationSprites = {
 		"FireRate": FireRate*2,
 		"ItemID": 5,
 		"BulletSize": Vector2(2, 2),
-		"BulletSpeed": 500,
+		"BulletSpeed": 1500,
 		"BulletLifeTime": 50,
 		"BulletDamage": 30,
-		"GotGun": true,
+		"GotGun": false,
 		"FirePoint": Vector2(0, -5),
 		"MagazinSize": 1,
-		"RunTimeMagazinSize": 1
+		"RunTimeMagazinSize": 1,
+		"BulletType": "Big"
 		},
 	"ItemIDList": {
 		0: "417",
@@ -158,15 +164,18 @@ func MagazinCalculate():
 
 func Fire():
 	if Input.is_action_pressed("fire") and CanFire and GunTimer.time_left <= 0.0:
-		var bullet_instance = bullet.instance()
-		bullet_instance.position = get_node("FirePoint").get_global_position()
-		bullet_instance.rotation = get_global_rotation()+3
-		bullet_instance.apply_impulse(Vector2(), Vector2(AnimationSprites[CurrentGun]["BulletSpeed"], 0).rotated(rotation))
-		get_tree().get_root().add_child(bullet_instance)
+		var BulletInstance = bullet.instance()
+		BulletInstance.position = get_node("FirePoint").get_global_position()
+		BulletInstance.rotation = get_global_rotation()+3
+		BulletInstance.BulletType = AnimationSprites[CurrentGun]["BulletType"]
+		BulletInstance.BulletSize = AnimationSprites[CurrentGun]["BulletSize"]
+		BulletInstance.BulletLifeTime = AnimationSprites[CurrentGun]["BulletLifeTime"]
+		BulletInstance.Damage = AnimationSprites[CurrentGun]["BulletDamage"]
+		BulletInstance.apply_impulse(Vector2(), Vector2(AnimationSprites[CurrentGun]["BulletSpeed"], 0).rotated(rotation))
+		get_tree().get_root().add_child(BulletInstance)
 		get_node("AnimationGun").play("Shoot" + CurrentGun)
 		AnimationSprites[CurrentGun]["RunTimeMagazinSize"] -= 1
 		CanFire = false
-		print(AnimationSprites[CurrentGun]["FireRate"])
 		GunTimer = get_tree().create_timer(AnimationSprites[CurrentGun]["FireRate"])
 		yield(GunTimer, "timeout")
 		CanFire = true
