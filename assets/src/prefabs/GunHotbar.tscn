@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/guns/GunSingle/417Single.png" type="Texture" id=1]
 [ext_resource path="res://assets/guns/GunSingle/Six12Single.png" type="Texture" id=2]
@@ -7,6 +7,14 @@
 [ext_resource path="res://assets/guns/GunSingle/DesertEagleSingle.png" type="Texture" id=5]
 [ext_resource path="res://assets/guns/GunSingle/FAMASSingle.png" type="Texture" id=6]
 [ext_resource path="res://assets/src/prefabs/GunHotbar.gd" type="Script" id=7]
+[ext_resource path="res://assets/fonts/sniglet/Sniglet-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/fonts/recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/gui/Question-mark.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 8 )
+fallback/0 = ExtResource( 9 )
 
 [node name="GunHotbar" type="Control"]
 anchor_right = 1.0
@@ -17,29 +25,27 @@ __meta__ = {
 }
 
 [node name="Panel0" type="Panel" parent="."]
+visible = false
 self_modulate = Color( 0.458824, 0.458824, 0.458824, 0.196078 )
-anchor_left = 1.0
-anchor_top = 0.533
-anchor_right = 1.0
-anchor_bottom = 0.533
-margin_left = -104.0
-margin_top = -287.8
-margin_right = -24.0
-margin_bottom = -222.8
+anchor_top = 0.469
+anchor_bottom = 0.469
+margin_left = 30.0
+margin_top = -239.8
+margin_right = 110.0
+margin_bottom = -174.8
 rect_pivot_offset = Vector2( 33, 31 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel1" type="Panel" parent="."]
+visible = false
 self_modulate = Color( 0.458824, 0.458824, 0.458824, 0.196078 )
-anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -104.0
+margin_left = 30.0
 margin_top = -173.0
-margin_right = -24.0
+margin_right = 110.0
 margin_bottom = -108.0
 rect_pivot_offset = Vector2( 33, 31 )
 __meta__ = {
@@ -47,53 +53,52 @@ __meta__ = {
 }
 
 [node name="Panel2" type="Panel" parent="."]
+visible = false
 self_modulate = Color( 0.458824, 0.458824, 0.458824, 0.196078 )
-anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -104.0
-margin_top = -83.0
-margin_right = -24.0
-margin_bottom = -18.0
-rect_pivot_offset = Vector2( 33, 31 )
-
-[node name="Panel3" type="Panel" parent="."]
-self_modulate = Color( 0.458824, 0.458824, 0.458824, 0.196078 )
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -104.0
+margin_left = 30.0
 margin_top = 7.0
-margin_right = -24.0
+margin_right = 110.0
 margin_bottom = 72.0
 rect_pivot_offset = Vector2( 33, 31 )
 
-[node name="Panel4" type="Panel" parent="."]
+[node name="Panel3" type="Panel" parent="."]
+visible = false
 self_modulate = Color( 0.458824, 0.458824, 0.458824, 0.196078 )
-anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -104.0
-margin_top = 97.0
-margin_right = -24.0
-margin_bottom = 162.0
+margin_left = 30.0
+margin_top = -83.0
+margin_right = 110.0
+margin_bottom = -18.0
+rect_pivot_offset = Vector2( 33, 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel4" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 0.458824, 0.458824, 0.458824, 0.196078 )
+anchor_top = 0.509
+anchor_bottom = 0.509
+margin_left = 30.0
+margin_top = 90.25
+margin_right = 110.0
+margin_bottom = 155.25
 rect_pivot_offset = Vector2( 33, 31 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel5" type="Panel" parent="."]
+visible = false
 self_modulate = Color( 0.458824, 0.458824, 0.458824, 0.196078 )
-anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -104.0
+margin_left = 30.0
 margin_top = 187.0
-margin_right = -24.0
+margin_right = 110.0
 margin_bottom = 252.0
 rect_pivot_offset = Vector2( 33, 31 )
 __meta__ = {
@@ -101,14 +106,13 @@ __meta__ = {
 }
 
 [node name="Image417" type="NinePatchRect" parent="."]
-anchor_left = 1.0
-anchor_top = 0.47
-anchor_right = 1.0
-anchor_bottom = 0.47
-margin_left = -96.0
-margin_top = -266.0
-margin_right = -26.0
-margin_bottom = -240.0
+visible = false
+anchor_top = 0.476
+anchor_bottom = 0.476
+margin_left = 40.0
+margin_top = -229.0
+margin_right = 110.0
+margin_bottom = -203.0
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 66, 26 )
 patch_margin_right = 66
@@ -118,14 +122,13 @@ __meta__ = {
 }
 
 [node name="ImageAWPS" type="NinePatchRect" parent="."]
-anchor_left = 1.0
-anchor_top = 0.47
-anchor_right = 1.0
-anchor_bottom = 0.47
-margin_left = -104.0
-margin_top = -155.0
-margin_right = -26.0
-margin_bottom = -123.0
+visible = false
+anchor_top = 0.405
+anchor_bottom = 0.405
+margin_left = 32.0
+margin_top = -87.75
+margin_right = 110.0
+margin_bottom = -55.75
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 73, 21 )
 __meta__ = {
@@ -133,14 +136,13 @@ __meta__ = {
 }
 
 [node name="ImageFAMAS" type="NinePatchRect" parent="."]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -96.0
-margin_top = -68.0
-margin_right = -30.0
-margin_bottom = -42.0
+visible = false
+anchor_top = 0.476
+anchor_bottom = 0.476
+margin_left = 40.0
+margin_top = 43.0
+margin_right = 106.0
+margin_bottom = 69.0
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 56, 24 )
 __meta__ = {
@@ -148,14 +150,13 @@ __meta__ = {
 }
 
 [node name="ImageP90" type="NinePatchRect" parent="."]
-anchor_left = 1.0
-anchor_top = 0.512
-anchor_right = 1.0
-anchor_bottom = 0.512
-margin_left = -96.0
-margin_top = 108.8
-margin_right = -30.0
-margin_bottom = 134.8
+visible = false
+anchor_top = 0.509
+anchor_bottom = 0.509
+margin_left = 40.0
+margin_top = 106.25
+margin_right = 106.0
+margin_bottom = 132.25
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 54, 20 )
 __meta__ = {
@@ -163,13 +164,12 @@ __meta__ = {
 }
 
 [node name="ImageSix12" type="NinePatchRect" parent="."]
-anchor_left = 1.0
+visible = false
 anchor_top = 0.5
-anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -104.0
+margin_left = 30.0
 margin_top = 204.0
-margin_right = -24.0
+margin_right = 110.0
 margin_bottom = 236.0
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 60, 20 )
@@ -178,16 +178,95 @@ __meta__ = {
 }
 
 [node name="ImageDesertEagle" type="NinePatchRect" parent="."]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -96.0
-margin_top = 12.0
-margin_right = -26.0
-margin_bottom = 60.0
+visible = false
+anchor_top = 0.533
+anchor_bottom = 0.533
+margin_left = 40.0
+margin_top = -95.75
+margin_right = 110.0
+margin_bottom = -47.75
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 43, 28 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MagazinText" type="RichTextLabel" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -176.0
+margin_top = -46.0
+margin_right = -16.0
+margin_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_fonts/mono_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "50/50 magazin"
+text = "50/50 magazin"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image0" type="NinePatchRect" parent="."]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -263.0
+margin_right = 110.0
+margin_bottom = -198.0
+texture = ExtResource( 10 )
+
+[node name="Image1" type="NinePatchRect" parent="."]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.0
+margin_top = -173.0
+margin_right = 112.0
+margin_bottom = -108.0
+texture = ExtResource( 10 )
+
+[node name="Image2" type="NinePatchRect" parent="."]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -83.0
+margin_right = 110.0
+margin_bottom = -18.0
+texture = ExtResource( 10 )
+
+[node name="Image3" type="NinePatchRect" parent="."]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.0
+margin_top = 7.0
+margin_right = 112.0
+margin_bottom = 72.0
+texture = ExtResource( 10 )
+
+[node name="Image4" type="NinePatchRect" parent="."]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.0
+margin_top = 97.0
+margin_right = 112.0
+margin_bottom = 162.0
+texture = ExtResource( 10 )
+
+[node name="Image5" type="NinePatchRect" parent="."]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = 187.0
+margin_right = 110.0
+margin_bottom = 252.0
+texture = ExtResource( 10 )

@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/sound/25-CC0-bang-sfx/bang_05.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/guns/Bullets/medium.png" type="Texture" id=2]
 [ext_resource path="res://assets/sound/gun_fire2.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/guns/Bullets/Explosion_Particle.png" type="Texture" id=4]
 [ext_resource path="res://assets/guns/Bullets/small.png" type="Texture" id=5]
 [ext_resource path="res://assets/sound/25-CC0-bang-sfx/bang_01.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/src/prefabs/AnimationBulletFinalImpact.gd" type="Script" id=7]
+[ext_resource path="res://assets/sound/q009-sounds/q009/explosion.ogg" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "ExplosionBig"
@@ -31,6 +33,47 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0.05, 0.875 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "ExplosionGaint"
+length = 1.15
+step = 0.02
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationBulletFinalImpact/SpriteGaint:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.04, 0.08, 0.12, 0.16, 0.2, 0.24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 7, 8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationBulletFinalImpact/HitGaint:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationBulletFinalImpact/SpriteGaint:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -99,15 +142,17 @@ script = ExtResource( 7 )
 
 [node name="AnimationBulletFinalImpact" type="AnimationPlayer" parent="."]
 anims/ExplosionBig = SubResource( 1 )
+anims/ExplosionGaint = SubResource( 4 )
 anims/ExplosionMedium = SubResource( 2 )
 anims/ExplosionSmall = SubResource( 3 )
 
 [node name="SpriteBig" type="Sprite" parent="AnimationBulletFinalImpact"]
+visible = false
 position = Vector2( -0.374573, 0 )
 texture = ExtResource( 5 )
 vframes = 10
 hframes = 5
-frame = 9
+frame = 21
 
 [node name="SpriteMedium" type="Sprite" parent="AnimationBulletFinalImpact"]
 visible = false
@@ -121,6 +166,13 @@ texture = ExtResource( 5 )
 vframes = 7
 hframes = 5
 
+[node name="SpriteGaint" type="Sprite" parent="AnimationBulletFinalImpact"]
+visible = false
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+hframes = 9
+frame = 8
+
 [node name="HitSmall" type="AudioStreamPlayer2D" parent="AnimationBulletFinalImpact"]
 visible = false
 stream = ExtResource( 3 )
@@ -132,4 +184,9 @@ stream = ExtResource( 1 )
 [node name="HitBig" type="AudioStreamPlayer2D" parent="AnimationBulletFinalImpact"]
 visible = false
 stream = ExtResource( 6 )
+
+[node name="HitGaint" type="AudioStreamPlayer2D" parent="AnimationBulletFinalImpact"]
+visible = false
+stream = ExtResource( 8 )
+attenuation = 1.6245
 [connection signal="animation_finished" from="AnimationBulletFinalImpact" to="." method="_on_AnimationBulletFinalImpact_animation_finished"]

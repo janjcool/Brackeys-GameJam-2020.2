@@ -7,7 +7,7 @@ var GunAndBulletDict = {
 	"DesertEagle": "Small",
 	"FAMAS": "Medium",
 	"P90": "Medium",
-	"Six12": "Medium"
+	"Six12": "Gaint"
 }
 
 func _ready():

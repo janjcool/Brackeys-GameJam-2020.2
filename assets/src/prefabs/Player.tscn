@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/Player/pixel guy.png" type="Texture" id=1]
 [ext_resource path="res://assets/src/prefabs/Player.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/guns/GunSpriteSheets/417 13frames 10fps.png" type="Texture" id=7]
 [ext_resource path="res://assets/guns/GunSpriteSheets/AWP 30frames 12fps.png" type="Texture" id=8]
 [ext_resource path="res://assets/guns/GunSpriteSheets/Desert Eagle 2frames 5fps.png" type="Texture" id=9]
+[ext_resource path="res://assets/sound/mike_koenig-shotgun/Chambering A Round-SoundBible.com-854171848.wav" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 54 )
@@ -153,6 +154,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "GunReload"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("ReloadSound:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -304,6 +321,7 @@ anims/GunAWP = SubResource( 7 )
 anims/GunDesertEagle = SubResource( 8 )
 anims/GunFAMAS = SubResource( 9 )
 anims/GunP90 = SubResource( 10 )
+anims/GunReload = SubResource( 18 )
 anims/GunSix12 = SubResource( 11 )
 anims/Shoot417 = SubResource( 12 )
 anims/ShootAWP = SubResource( 13 )
@@ -315,6 +333,10 @@ anims/ShootSix12 = SubResource( 17 )
 [node name="FirePoint" type="Node2D" parent="GunPos"]
 position = Vector2( 50, 10 )
 
+[node name="ReloadSound" type="AudioStreamPlayer2D" parent="GunPos"]
+stream = ExtResource( 10 )
+volume_db = 4.0
+
 [node name="GunSprites" type="Node" parent="GunPos"]
 
 [node name="417" type="Sprite" parent="GunPos/GunSprites"]
@@ -322,7 +344,7 @@ visible = false
 texture = ExtResource( 7 )
 vframes = 7
 hframes = 2
-frame = 5
+frame = 3
 
 [node name="AWP" type="Sprite" parent="GunPos/GunSprites"]
 visible = false

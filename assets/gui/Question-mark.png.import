@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Explosion_Particle.png-3cde037524efbe9d9d6ab7ccb853c95b.stex"
+path="res://.import/Question-mark.png-668d310828e78d0f488f6747ed41ace8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/Explosion_Particle.png"
-dest_files=[ "res://.import/Explosion_Particle.png-3cde037524efbe9d9d6ab7ccb853c95b.stex" ]
+source_file="res://assets/gui/Question-mark.png"
+dest_files=[ "res://.import/Question-mark.png-668d310828e78d0f488f6747ed41ace8.stex" ]
 
 [params]
 

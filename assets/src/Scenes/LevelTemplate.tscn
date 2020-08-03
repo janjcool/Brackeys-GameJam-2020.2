@@ -653,7 +653,7 @@ tile_data = PoolIntArray( 262128, 16, 0, 327669, 14, 2, 327673, 14, 1, 262145, 1
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="GunHotbar" parent="Player" instance=ExtResource( 3 )]
-margin_left = -380.0
-margin_top = 20.0
-margin_right = -380.0
-margin_bottom = 20.0
+margin_left = -612.0
+margin_top = -376.0
+margin_right = 610.0
+margin_bottom = 375.0
