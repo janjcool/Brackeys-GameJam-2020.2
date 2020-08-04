@@ -163,6 +163,7 @@ vframes = 7
 hframes = 5
 
 [node name="SpriteGaint" type="Sprite" parent="AnimationBulletFinalImpact"]
+visible = false
 scale = Vector2( 3, 3 )
 texture = ExtResource( 8 )
 hframes = 9

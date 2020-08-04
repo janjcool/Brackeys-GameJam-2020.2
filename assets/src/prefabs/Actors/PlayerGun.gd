@@ -103,7 +103,7 @@ var AnimationSprites = {
 		"BulletSpeed": 1500,
 		"BulletLifeTime": 50,
 		"BulletDamage": 30,
-		"GotGun": false,
+		"GotGun": true,
 		"FirePoint": Vector2(0, -5),
 		"MagazinSize": 1,
 		"RunTimeMagazinSize": 1,
@@ -151,6 +151,7 @@ func ReloadManual():
 		ReloadGun()
 
 func ReloadGun():
+	SoundSetPos()
 	get_node("AnimationGun").play("GunReload")
 	CanFire = false
 	GunTimer = get_tree().create_timer(GunReloadTime)
@@ -173,12 +174,21 @@ func Fire():
 		BulletInstance.Damage = AnimationSprites[CurrentGun]["BulletDamage"]
 		BulletInstance.apply_impulse(Vector2(), Vector2(AnimationSprites[CurrentGun]["BulletSpeed"], 0).rotated(rotation))
 		get_tree().get_root().add_child(BulletInstance)
+		SoundSetPos()
 		get_node("AnimationGun").play("Shoot" + CurrentGun)
 		AnimationSprites[CurrentGun]["RunTimeMagazinSize"] -= 1
 		CanFire = false
 		GunTimer = get_tree().create_timer(AnimationSprites[CurrentGun]["FireRate"])
 		yield(GunTimer, "timeout")
 		CanFire = true
+
+func SoundSetPos():
+	get_node("GunSound/ReloadSound").position = get_global_position()
+	get_node("GunSound/CannonShoot").position = get_node("FirePoint").get_global_position()
+	get_node("GunSound/Pistol").position = get_node("FirePoint").get_global_position()
+	get_node("GunSound/Sniper").position = get_node("FirePoint").get_global_position()
+	get_node("GunSound/FastShoot").position = get_node("FirePoint").get_global_position()
+	get_node("GunSound/FastShoot2").position = get_node("FirePoint").get_global_position()
 
 func FlipSprite():
 	if get_global_rotation() > -1.5 and get_global_rotation() < 1.5:
