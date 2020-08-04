@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/src/prefabs/Bullets/bullet.gd" type="Script" id=1]
-[ext_resource path="res://assets/guns/Bullets/bullet.png" type="Texture" id=2]
-[ext_resource path="res://assets/guns/Bullets/BigBullet.png" type="Texture" id=3]
+[ext_resource path="res://assets/Enemies/ARMob.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 4 )
+extents = Vector2( 4, 4 )
 
 [node name="bullet" type="RigidBody2D" groups=[
 "Bullet",
@@ -17,13 +16,11 @@ contact_monitor = true
 script = ExtResource( 1 )
 
 [node name="NormalBullet" type="Sprite" parent="."]
-scale = Vector2( 8, 8 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
-
-[node name="BigBullet" type="Sprite" parent="."]
-visible = false
-scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 3 )
+offset = Vector2( -0.5, 2.5 )
+hframes = 24
+frame = 23
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

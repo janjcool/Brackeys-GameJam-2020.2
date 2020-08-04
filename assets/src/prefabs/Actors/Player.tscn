@@ -1,18 +1,9 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/src/prefabs/Actors/PlayerGun.gd" type="Script" id=1]
 [ext_resource path="res://assets/src/prefabs/Actors/Player.gd" type="Script" id=2]
 [ext_resource path="res://assets/Player/SpriteSheet_player.png" type="Texture" id=3]
 [ext_resource path="res://assets/sound/mike_koenig-shotgun/Chambering A Round-SoundBible.com-854171848.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/guns/GunSpriteSheets/417 13frames 10fps.png" type="Texture" id=5]
-[ext_resource path="res://assets/guns/GunSpriteSheets/P90 11frames 12fps.png" type="Texture" id=6]
-[ext_resource path="res://assets/guns/GunSpriteSheets/Desert Eagle 2frames 5fps.png" type="Texture" id=7]
-[ext_resource path="res://assets/guns/GunSpriteSheets/Six12 SD 4frames 6fps.png" type="Texture" id=8]
-[ext_resource path="res://assets/guns/GunSpriteSheets/AWP 30frames 12fps.png" type="Texture" id=9]
-[ext_resource path="res://assets/guns/GunSpriteSheets/FAMAS 10frames 16fps.png" type="Texture" id=10]
-[ext_resource path="res://assets/sound/25-CC0-bang-sfx/shot_01.wav" type="AudioStream" id=11]
-[ext_resource path="res://assets/sound/gun_fire.wav" type="AudioStream" id=12]
-[ext_resource path="res://assets/sound/25-CC0-bang-sfx/shot_03.wav" type="AudioStream" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 54 )
@@ -163,297 +154,17 @@ tracks/1/keys = {
 "values": [ Vector2( 3, 3 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Gun417"
+[sub_resource type="Animation" id=21]
+resource_name = "ReloadGun"
+length = 1.35
 tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/417:frame")
+tracks/0/path = NodePath("ReloadSound:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 3 ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "GunAWP"
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/AWP:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "GunDesertEagle"
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/DesertEagle:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "GunFAMAS"
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/FAMAS:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "GunP90"
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/P90:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=11]
-resource_name = "GunReload"
-length = 1.7
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSound/ReloadSound:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-
-[sub_resource type="Animation" id=12]
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/Six12:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=13]
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/417:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 8, 9, 10 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("GunSound/Sniper:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.05, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-
-[sub_resource type="Animation" id=14]
-length = 0.3
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/AWP:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 24, 25, 26, 27, 28, 1 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("GunSound/Sniper:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.16 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-
-[sub_resource type="Animation" id=15]
-length = 0.3
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/DesertEagle:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0, 1 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("GunSound/Pistol:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.18 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-
-[sub_resource type="Animation" id=16]
-length = 0.5
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/FAMAS:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("GunSound/FastShoot:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.06, 0.22, 0.3, 0.45 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true, false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("GunSound/FastShoot2:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.19, 0.34 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-
-[sub_resource type="Animation" id=17]
-length = 0.45
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/P90:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 2, 2, 3, 4, 5, 6, 7, 8, 9 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("GunSound/FastShoot:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.43, 0.725 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ true, true, false, true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("GunSound/FastShoot2:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( -0.04, 0.1, 0.29, 0.43 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ true, true, true, false ]
-}
-
-[sub_resource type="Animation" id=18]
-length = 0.7
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("GunSprites/Six12:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("GunSound/CannonShoot:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.65 ),
+"times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -476,7 +187,7 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 vframes = 7
 hframes = 8
-frame = 14
+frame = 11
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/PlayerDuck = SubResource( 19 )
@@ -496,83 +207,12 @@ script = ExtResource( 1 )
 offset = Vector2( -25, -10 )
 BulletSpeed = 1000
 
-[node name="AnimationGun" type="AnimationPlayer" parent="GunPos"]
-anims/Gun417 = SubResource( 6 )
-anims/GunAWP = SubResource( 7 )
-anims/GunDesertEagle = SubResource( 8 )
-anims/GunFAMAS = SubResource( 9 )
-anims/GunP90 = SubResource( 10 )
-anims/GunReload = SubResource( 11 )
-anims/GunSix12 = SubResource( 12 )
-anims/Shoot417 = SubResource( 13 )
-anims/ShootAWP = SubResource( 14 )
-anims/ShootDesertEagle = SubResource( 15 )
-anims/ShootFAMAS = SubResource( 16 )
-anims/ShootP90 = SubResource( 17 )
-anims/ShootSix12 = SubResource( 18 )
-
 [node name="FirePoint" type="Node2D" parent="GunPos"]
-position = Vector2( 50, 10 )
+position = Vector2( 38, 0 )
 
-[node name="GunSprites" type="Node" parent="GunPos"]
-
-[node name="417" type="Sprite" parent="GunPos/GunSprites"]
-visible = false
-texture = ExtResource( 5 )
-vframes = 7
-hframes = 2
-frame = 10
-
-[node name="AWP" type="Sprite" parent="GunPos/GunSprites"]
-visible = false
-texture = ExtResource( 9 )
-vframes = 10
-hframes = 3
-frame = 1
-
-[node name="DesertEagle" type="Sprite" parent="GunPos/GunSprites"]
-visible = false
-texture = ExtResource( 7 )
-vframes = 2
-frame = 1
-
-[node name="FAMAS" type="Sprite" parent="GunPos/GunSprites"]
-visible = false
-texture = ExtResource( 10 )
-vframes = 5
-hframes = 2
-frame = 9
-
-[node name="P90" type="Sprite" parent="GunPos/GunSprites"]
-visible = false
-texture = ExtResource( 6 )
-vframes = 6
-hframes = 2
-frame = 9
-
-[node name="Six12" type="Sprite" parent="GunPos/GunSprites"]
-visible = false
-texture = ExtResource( 8 )
-vframes = 4
-frame = 2
-
-[node name="GunSound" type="Node" parent="GunPos"]
-
-[node name="ReloadSound" type="AudioStreamPlayer2D" parent="GunPos/GunSound"]
+[node name="ReloadSound" type="AudioStreamPlayer2D" parent="GunPos"]
 stream = ExtResource( 4 )
 volume_db = 4.0
 
-[node name="CannonShoot" type="AudioStreamPlayer2D" parent="GunPos/GunSound"]
-stream = ExtResource( 12 )
-
-[node name="FastShoot" type="AudioStreamPlayer2D" parent="GunPos/GunSound"]
-stream = ExtResource( 14 )
-
-[node name="FastShoot2" type="AudioStreamPlayer2D" parent="GunPos/GunSound"]
-stream = ExtResource( 14 )
-
-[node name="Pistol" type="AudioStreamPlayer2D" parent="GunPos/GunSound"]
-stream = ExtResource( 11 )
-
-[node name="Sniper" type="AudioStreamPlayer2D" parent="GunPos/GunSound"]
-stream = ExtResource( 14 )
+[node name="AnimationGun" type="AnimationPlayer" parent="GunPos"]
+anims/ReloadGun = SubResource( 21 )
