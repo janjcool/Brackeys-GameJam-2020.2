@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/src/prefabs/gui/ExitButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/world assets/Boxes/4.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/world assets/Willows/2.png" type="Texture" id=4]
+[ext_resource path="res://assets/src/prefabs/gui/PlayButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/src/prefabs/gui/SettingsButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/src/Scenes/MainMenu.gd" type="Script" id=7]
+[ext_resource path="res://assets/src/prefabs/gui/fadeIn.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 87.9277
+margin_top = 81.7818
+margin_right = 1111.93
+margin_bottom = 671.782
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_right = 1024.0
+margin_bottom = 26.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 30.0
+margin_right = 1024.0
+margin_bottom = 450.0
+size_flags_vertical = 3
+
+[node name="buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 510.0
+margin_bottom = 420.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="PlayButton" parent="Menu/CenterRow/buttons" instance=ExtResource( 5 )]
+margin_right = 510.0
+margin_bottom = 120.0
+
+[node name="SettingsButton" parent="Menu/CenterRow/buttons" instance=ExtResource( 6 )]
+margin_top = 150.0
+margin_right = 510.0
+margin_bottom = 270.0
+
+[node name="ExitButton" parent="Menu/CenterRow/buttons" instance=ExtResource( 1 )]
+margin_top = 300.0
+margin_right = 510.0
+margin_bottom = 420.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 420.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Characters" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
+margin_left = 184.0
+margin_top = 126.0
+margin_right = 325.0
+margin_bottom = 294.0
+texture = ExtResource( 4 )
+
+[node name="VersionLabel" type="Label" parent="Menu"]
+margin_top = 502.0
+margin_right = 1024.0
+margin_bottom = 541.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+text = "Thanks for playing my game"
+
+[node name="fadeIn" parent="." instance=ExtResource( 8 )]
+[connection signal="pressed" from="Menu/CenterRow/buttons/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/buttons/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/buttons/ExitButton" to="." method="_on_ExitButton_pressed"]

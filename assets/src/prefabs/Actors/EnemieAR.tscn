@@ -32,7 +32,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=2]
 resource_name = "IdleLeft"
 length = 0.6
 loop = true
@@ -62,7 +62,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=3]
 resource_name = "IdleRight"
 length = 0.6
 loop = true
@@ -92,7 +92,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=4]
 resource_name = "RunLeft"
 length = 0.85
 loop = true
@@ -121,8 +121,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "RunRight"
+[sub_resource type="Animation" id=5]
 length = 0.85
 loop = true
 tracks/0/type = "value"
@@ -150,8 +149,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "ShootLeft"
+[sub_resource type="Animation" id=6]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -179,8 +177,7 @@ tracks/1/keys = {
 "values": [ Vector2( -1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "ShootRight"
+[sub_resource type="Animation" id=7]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -207,7 +204,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 10, 14 )
 
 [node name="EnemieAR" type="KinematicBody2D" groups=[
@@ -222,7 +219,7 @@ script = ExtResource( 3 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 1 )
 hframes = 24
-frame = 3
+frame = 19
 
 [node name="FirePoint" type="Position2D" parent="Sprite"]
 position = Vector2( 14, 0 )
@@ -231,17 +228,18 @@ scale = Vector2( 1, -1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Die = SubResource( 1 )
-anims/IdleLeft = SubResource( 8 )
-anims/IdleRight = SubResource( 9 )
-anims/RunLeft = SubResource( 10 )
-anims/RunRight = SubResource( 4 )
-anims/ShootLeft = SubResource( 5 )
-anims/ShootRight = SubResource( 6 )
+anims/IdleLeft = SubResource( 2 )
+anims/IdleRight = SubResource( 3 )
+anims/RunLeft = SubResource( 4 )
+anims/RunRight = SubResource( 5 )
+anims/ShootLeft = SubResource( 6 )
+anims/ShootRight = SubResource( 7 )
 
 [node name="DieSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 attenuation = 0.101532
+bus = "SoundEffects"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 5 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )

@@ -47,6 +47,7 @@ func _ready() -> void:
 	AnimationTimer = get_tree().create_timer(0.0)
 	var animation
 	StartPosition = position
+	
 
 func _process(delta: float) -> void:
 	PlayerPos = get_global_position()

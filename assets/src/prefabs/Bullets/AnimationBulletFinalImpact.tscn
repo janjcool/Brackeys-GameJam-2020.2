@@ -35,5 +35,6 @@ hframes = 9
 [node name="HitSound" type="AudioStreamPlayer2D" parent="Animation"]
 stream = ExtResource( 3 )
 autoplay = true
+bus = "SoundEffects"
 [connection signal="animation_finished" from="Animation" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]

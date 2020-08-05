@@ -15,7 +15,7 @@ var CanFire = true
 var bullet = preload("res://assets/src/prefabs/Bullets/BulletEnemieRPG.tscn")
 
 func _ready() -> void:
-	PlayerNode = get_tree().root.get_child(0).get_node("Player")
+	PlayerNode = get_tree().root.get_child(1).get_node("Player")
 	GunTimer = get_tree().create_timer(FireRate)
 	
 	if flip:

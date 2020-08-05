@@ -14,6 +14,10 @@ func _ready() -> void:
 	MusicPlayer.stream = SongList[0]
 	add_child(MusicPlayer)
 	if MuteMusic == false:
+		var DataHub = get_node("/root/DataHub")
+		MuteMusic = DataHub.MuteMusic
+		print(DataHub.MuteMusic)
+	if MuteMusic == false:
 		MusicPlayer.play()
 
 func _process(delta: float) -> void:

@@ -6,5 +6,6 @@
 [node name="PlayerShoot" type="AudioStreamPlayer2D"]
 stream = ExtResource( 1 )
 autoplay = true
+bus = "SoundEffects"
 script = ExtResource( 2 )
 [connection signal="finished" from="." to="." method="_on_PlayerShoot_finished"]

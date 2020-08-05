@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/Enemies/RPGmob.png" type="Texture" id=2]
 [ext_resource path="res://assets/sound/aargh/aargh0.ogg" type="AudioStream" id=3]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 resource_name = "Die"
 length = 2.0
 step = 0.05
@@ -33,7 +33,7 @@ tracks/1/keys = {
 "values": [ true, false, false ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -79,9 +79,9 @@ hframes = 10
 frame = 8
 
 [node name="Animation" type="AnimationPlayer" parent="."]
-anims/Die = SubResource( 5 )
-anims/Idle = SubResource( 6 )
-anims/Shoot = SubResource( 7 )
+anims/Die = SubResource( 1 )
+anims/Idle = SubResource( 2 )
+anims/Shoot = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 10.5 )
@@ -92,3 +92,4 @@ position = Vector2( 10, 3.5 )
 
 [node name="DieSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+bus = "SoundEffects"

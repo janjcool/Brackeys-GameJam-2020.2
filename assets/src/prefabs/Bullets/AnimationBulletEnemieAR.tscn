@@ -58,4 +58,5 @@ frame = 8
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="AnimationPlayer"]
 stream = ExtResource( 2 )
+bus = "SoundEffects"
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
