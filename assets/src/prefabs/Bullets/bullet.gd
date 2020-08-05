@@ -8,7 +8,7 @@ var BulletLifeTime
 var explosion = preload("res://assets/src/prefabs/Bullets/AnimationBulletFinalImpact.tscn")
 
 func _ready() -> void:
-	GunDict = get_tree().root.get_child(0).get_node("Player").get_node("GunPos").GunDict
+	GunDict = get_tree().root.get_child(0).get_node("Player").GunDict
 	
 	yield(get_tree().create_timer(BulletLifeTime), "timeout")
 	queue_free()

@@ -9,7 +9,6 @@ export var flip = false
 export var BulletLifeTime = 15
 
 var PlayerNode
-var CurrentNode
 var GunTimer
 var PlayerInRange = false
 var CanFire = true
@@ -17,7 +16,6 @@ var bullet = preload("res://assets/src/prefabs/Bullets/BulletEnemieRPG.tscn")
 
 func _ready() -> void:
 	PlayerNode = get_tree().root.get_child(0).get_node("Player")
-	CurrentNode = get_node("../EnemieRPG")
 	GunTimer = get_tree().create_timer(FireRate)
 	
 	if flip:
@@ -30,7 +28,7 @@ func _process(delta: float) -> void:
 		Shoot()
 
 func LookForPlayer():
-	if PlayerNode.position.x-CurrentNode.position.x < MaxSeeDistance and PlayerNode.position.x-CurrentNode.position.x > MaxSeeDistance*-1:
+	if PlayerNode.position.x-position.x < MaxSeeDistance and PlayerNode.position.x-position.x > MaxSeeDistance*-1:
 		PlayerInRange = true
 	else:
 		PlayerInRange = false

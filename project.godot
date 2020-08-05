@@ -52,11 +52,11 @@ ui_left={
 "deadzone": 0.5,
 "events": [  ]
 }
-ui_up={
+ui_right={
 "deadzone": 0.5,
 "events": [  ]
 }
-ui_right={
+ui_up={
 "deadzone": 0.5,
 "events": [  ]
 }
