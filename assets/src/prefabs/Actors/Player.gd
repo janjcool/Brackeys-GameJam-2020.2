@@ -17,6 +17,7 @@ export var ShootAudioFile = "res://assets/sound/q009-sounds/q009/pistol.wav"
 export var bullet = preload("res://assets/src/prefabs/Bullets/bullet.tscn")
 export var ShootSound = preload("res://assets/src/prefabs/Bullets/PlayerShootAudio.tscn")
 
+var StartLives = Lives
 var StartPosition
 var velocity = Vector2.ZERO
 var IsDying = false

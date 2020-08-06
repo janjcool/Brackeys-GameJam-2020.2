@@ -16,7 +16,6 @@ func _ready() -> void:
 	if MuteMusic == false:
 		var DataHub = get_node("/root/DataHub")
 		MuteMusic = DataHub.MuteMusic
-		print(DataHub.MuteMusic)
 	if MuteMusic == false:
 		MusicPlayer.play()
 

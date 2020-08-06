@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 DataHub="*res://assets/src/DataHub.tscn"
+Music="*res://assets/src/prefabs/gui/Music.tscn"
 
 [display]
 
