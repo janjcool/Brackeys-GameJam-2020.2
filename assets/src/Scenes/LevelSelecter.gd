@@ -2,14 +2,14 @@ extends Control
 
 export var BackButton = "res://assets/src/Scenes/MainMenu.tscn"
 
-export var Level1 = "res://assets/src/Scenes/Levels/Level1.tscn"
-export var Level2 = "res://assets/src/Scenes"
-export var Level3 = "res://assets/src/Scenes"
-export var Level4 = "res://assets/src/Scenes"
-export var Level5 = "res://assets/src/Scenes"
-export var Level6 = "res://assets/src/Scenes"
-export var Level7 = "res://assets/src/Scenes"
-export var Level8 = "res://assets/src/Scenes"
+export var Level1 = "res://assets/src/Levels/Level1.tscn"
+export var Level2 = "res://assets/src/Levels/Level2.tscn"
+export var Level3 = "res://assets/src/Levels/Level3.tscn"
+export var Level4 = "res://assets/src/Levels/Level4.tscn"
+export var Level5 = "res://assets/src/Levels/Level5.tscn"
+export var Level6 = "res://assets/src/Levels/Level6.tscn"
+export var Level7 = "res://assets/src/Levels/Level7.tscn"
+export var Level8 = "res://assets/src/Levels/Level8.tscn"
 
 func _ready() -> void:
 	get_node("Menu/buttons/Level 1-4/Level1").grab_focus()

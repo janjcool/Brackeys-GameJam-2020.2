@@ -365,7 +365,6 @@ __meta__ = {
 margin_top = 530.0
 margin_right = 1120.0
 margin_bottom = 650.0
-rect_min_size = Vector2( 360, 120 )
 custom_constants/hseparation = 2
 [connection signal="pressed" from="Menu/buttons/Level 1-4/Level1" to="." method="_on_Level1_pressed"]
 [connection signal="pressed" from="Menu/buttons/Level 1-4/Level2" to="." method="_on_Level2_pressed"]

@@ -15,7 +15,7 @@ func _on_BulletEnemieRPG_body_entered(body: Node) -> void:
 		ExplosionInstance.position = get_global_position()
 		get_tree().get_root().add_child(ExplosionInstance)
 		
-		get_tree().root.get_child(0).get_node("Player").Health = get_tree().root.get_child(0).get_node("Player").Health-Damage
+		get_tree().root.get_child(2).get_node("Player").Health = get_tree().root.get_child(2).get_node("Player").Health-Damage
 		
 		queue_free()
 	elif not body.is_in_group("Enemie"):

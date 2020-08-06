@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/TileSet/MainTileSet.tres" type="TileSet" id=1]
-[ext_resource path="res://assets/src/Actors/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/src/prefabs/Actors/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/src/prefabs/NextLevel/NextLevelSignDown.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/src/prefabs/NextLevel/NextLevelBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/Background/finalDay-edit.PNG" type="Texture" id=9]
 [ext_resource path="res://assets/src/Scenes/MainGame.gd" type="Script" id=10]
 [ext_resource path="res://assets/src/Scenes/UserInterface.tscn" type="PackedScene" id=11]
+
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 10 )

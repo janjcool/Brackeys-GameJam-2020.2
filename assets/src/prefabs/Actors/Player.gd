@@ -85,7 +85,7 @@ func Die():
 			GunTimer = get_tree().create_timer(3.0)
 			yield(GunTimer, "timeout")
 		
-			queue_free()
+			get_tree().reload_current_scene()
 		if IsDying == false:
 			print("-1 live")
 			Health = 1
@@ -104,24 +104,16 @@ func AnimationChooser(animation):
 		AnimationIsLeft = false
 		if Shoot == true or Input.is_action_pressed("fire") and Reloading == false:
 			animation = "DuckShootRight"
-			get_node("CollisionShape2D").scale = Vector2(0, 0.675)
-			get_node("CollisionShape2D").position = Vector2(0, 20)
 			Shoot = false
 		else:
 			animation = "DuckRight"
-			get_node("CollisionShape2D").scale = Vector2(0, 0.675)
-			get_node("CollisionShape2D").position = Vector2(0, 20)
 	elif Input.is_action_pressed("Duck"):
 		AnimationIsLeft = true
 		if Shoot == true or Input.is_action_pressed("fire") and Reloading == false:
 			animation = "DuckShootLeft"
-			get_node("CollisionShape2D").scale = Vector2(0, 0.675)
-			get_node("CollisionShape2D").position = Vector2(0, 20)
 			Shoot = false
 		else:
 			animation = "DuckLeft"
-			get_node("CollisionShape2D").scale = Vector2(0, 0.675)
-			get_node("CollisionShape2D").position = Vector2(0, 20)
 	elif not velocity.y == 0 and velocity.x >= 0 or not is_on_floor() and velocity.x >= 0:
 		AnimationIsLeft= false
 		if Shoot == true or Input.is_action_pressed("fire") and Reloading == false:

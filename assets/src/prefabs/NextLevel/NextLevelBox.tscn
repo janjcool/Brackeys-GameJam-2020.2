@@ -3,11 +3,10 @@
 [ext_resource path="res://assets/src/prefabs/NextLevel/NextLevelBox.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 251.129, 32.2303 )
+extents = Vector2( 1582.53, 88.8008 )
 
 [node name="NextLevelBox" type="RigidBody2D"]
 collision_layer = 8
-mode = 1
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true

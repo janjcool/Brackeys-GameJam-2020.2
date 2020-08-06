@@ -42,7 +42,7 @@ func _ready():
 	WaitTime = randi()%MaxWaitTime+1
 
 func _process(delta: float) -> void:
-	PlayerPosition = get_tree().root.get_child(2).get_node("Player").get_global_position()
+	PlayerPosition = get_tree().root.get_node("LevelTemplate").get_node("Player").get_global_position()
 	LookForPlayer()
 	
 	if PlayerSee == false:
