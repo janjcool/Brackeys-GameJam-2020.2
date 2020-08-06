@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ARMob.png-a97e5bc4824ab78810280d80a3bff5a8.stex"
+path="res://.import/5-original.png-85a875b8096afe4ecbb7f03f46bc1f0d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/src/prefabs/Bullets/ARMob.png"
-dest_files=[ "res://.import/ARMob.png-a97e5bc4824ab78810280d80a3bff5a8.stex" ]
+source_file="res://assets/world assets/Pointers/5-original.png"
+dest_files=[ "res://.import/5-original.png-85a875b8096afe4ecbb7f03f46bc1f0d.stex" ]
 
 [params]
 

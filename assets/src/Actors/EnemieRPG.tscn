@@ -1,8 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/src/prefabs/Actors/EnemieRPG.gd" type="Script" id=1]
+[ext_resource path="res://assets/src/Actors/EnemieRPG.gd" type="Script" id=1]
 [ext_resource path="res://assets/Enemies/RPGmob.png" type="Texture" id=2]
 [ext_resource path="res://assets/sound/aargh/aargh0.ogg" type="AudioStream" id=3]
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Die"

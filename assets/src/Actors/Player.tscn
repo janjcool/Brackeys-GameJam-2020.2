@@ -1,8 +1,10 @@
 [gd_scene load_steps=32 format=2]
 
-[ext_resource path="res://assets/src/prefabs/Actors/Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/src/Actors/Player.gd" type="Script" id=2]
 [ext_resource path="res://assets/Player/SpriteSheet_player.png" type="Texture" id=3]
 [ext_resource path="res://assets/sound/mike_koenig-shotgun/Chambering A Round-SoundBible.com-854171848.wav" type="AudioStream" id=4]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 54 )

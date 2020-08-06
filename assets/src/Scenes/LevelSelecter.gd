@@ -2,7 +2,7 @@ extends Control
 
 export var BackButton = "res://assets/src/Scenes/MainMenu.tscn"
 
-export var Level1 = "res://assets/src/Scenes/LevelTemplate.tscn"
+export var Level1 = "res://assets/src/Scenes/Levels/Level1.tscn"
 export var Level2 = "res://assets/src/Scenes"
 export var Level3 = "res://assets/src/Scenes"
 export var Level4 = "res://assets/src/Scenes"
