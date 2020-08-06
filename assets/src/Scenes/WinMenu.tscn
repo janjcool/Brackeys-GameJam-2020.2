@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/fonts/blocky/blocky.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/src/Scenes/WinMenu.gd" type="Script" id=3]
+[ext_resource path="res://assets/src/prefabs/gui/MainMenuButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/src/prefabs/gui/ExitButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/src/prefabs/gui/fadeIn.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 87.9277
+margin_top = 81.7818
+margin_right = 1111.93
+margin_bottom = 671.782
+focus_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_right = 1024.0
+margin_bottom = 590.0
+focus_mode = 2
+size_flags_vertical = 3
+
+[node name="buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 1024.0
+margin_bottom = 590.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Menu/CenterRow/buttons"]
+margin_top = 110.0
+margin_right = 1024.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 10
+custom_constants/line_spacing = 50
+custom_constants/shadow_offset_y = 10
+custom_constants/shadow_as_outline = 0
+text = "you win"
+align = 1
+
+[node name="ExitButton" parent="Menu/CenterRow/buttons" instance=ExtResource( 5 )]
+margin_top = 320.0
+margin_bottom = 440.0
+
+[node name="MainMenuButton" parent="Menu/CenterRow/buttons" instance=ExtResource( 4 )]
+margin_top = 470.0
+margin_bottom = 590.0
+
+[node name="VersionLabel" type="Label" parent="."]
+margin_left = 14.874
+margin_top = 694.652
+margin_right = 1178.87
+margin_bottom = 733.652
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 1 )
+text = "Thanks for playing my game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fadeIn" parent="." instance=ExtResource( 6 )]
+visible = false
+[connection signal="pressed" from="Menu/CenterRow/buttons/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/buttons/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

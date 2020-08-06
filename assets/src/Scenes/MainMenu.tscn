@@ -26,6 +26,7 @@ margin_left = 87.9277
 margin_top = 81.7818
 margin_right = 1111.93
 margin_bottom = 671.782
+focus_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -40,11 +41,13 @@ stretch_mode = 4
 margin_top = 30.0
 margin_right = 1024.0
 margin_bottom = 450.0
+focus_mode = 2
 size_flags_vertical = 3
 
 [node name="buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 510.0
 margin_bottom = 420.0
+focus_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 30

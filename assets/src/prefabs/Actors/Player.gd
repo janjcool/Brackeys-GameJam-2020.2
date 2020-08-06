@@ -35,7 +35,7 @@ var GunDict = {
 	"FireRate": FireRate*0.2,
 	"BulletSize": Vector2(0.8, 0.8),
 	"BulletSpeed": 2000,
-	"BulletLifeTime": 30,
+	"BulletLifeTime": 1,
 	"BulletDamage": 15,
 	"FirePoint": Vector2(20, -8),
 	"MagazinSize": 50,

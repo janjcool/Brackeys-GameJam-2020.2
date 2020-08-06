@@ -18,7 +18,7 @@ var Direction = 1
 var GameTimer
 var Distance
 var WaitTime
-var Velocity
+var Velocity = Vector2()
 var DistanceCounter = 0
 var NotSeeProcess = "walk"
 var BussyWaiting = false

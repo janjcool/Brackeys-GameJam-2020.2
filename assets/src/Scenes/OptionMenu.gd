@@ -17,3 +17,7 @@ func _on_MuteMusic_toggled(button_pressed: bool) -> void:
 	
 func _on_BackButton_pressed() -> void:
 	get_tree().change_scene(BackButton)
+
+
+func _on_CheckBox_toggled(button_pressed: bool) -> void:
+	OS.window_fullscreen = !OS.window_fullscreen

@@ -43,21 +43,21 @@ text = "Settings"
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 129.0
 margin_right = 1024.0
-margin_bottom = 590.0
+margin_bottom = 615.0
 size_flags_vertical = 3
 
 [node name="buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 1024.0
-margin_bottom = 461.0
+margin_bottom = 486.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
 [node name="VolumeSlider" type="HBoxContainer" parent="Menu/CenterRow/buttons"]
-margin_top = 67.0
+margin_top = 33.0
 margin_right = 1024.0
-margin_bottom = 130.0
+margin_bottom = 96.0
 
 [node name="Text" type="Label" parent="Menu/CenterRow/buttons/VolumeSlider"]
 margin_right = 185.0
@@ -77,18 +77,36 @@ min_value = -80.0
 max_value = 6.0
 
 [node name="MuteMusic" type="CheckBox" parent="Menu/CenterRow/buttons"]
-margin_top = 160.0
+margin_top = 126.0
 margin_right = 1024.0
-margin_bottom = 244.0
+margin_bottom = 210.0
 custom_fonts/font = ExtResource( 3 )
 text = "Mute Music"
 
+[node name="VolumeSlider2" type="HBoxContainer" parent="Menu/CenterRow/buttons"]
+margin_top = 240.0
+margin_right = 1024.0
+margin_bottom = 303.0
+
+[node name="CheckBox" type="CheckBox" parent="Menu/CenterRow/buttons/VolumeSlider2"]
+margin_right = 24.0
+margin_bottom = 63.0
+
+[node name="Text" type="Label" parent="Menu/CenterRow/buttons/VolumeSlider2"]
+margin_left = 28.0
+margin_right = 241.0
+margin_bottom = 63.0
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 2 )
+text = "fullscreen"
+
 [node name="BackButton" parent="Menu/CenterRow/buttons" instance=ExtResource( 2 )]
-margin_top = 274.0
-margin_bottom = 394.0
+margin_top = 333.0
+margin_bottom = 453.0
 
 [node name="fadeIn" parent="." instance=ExtResource( 7 )]
 visible = false
 [connection signal="value_changed" from="Menu/CenterRow/buttons/VolumeSlider/Slider" to="." method="_on_Slider_value_changed"]
 [connection signal="toggled" from="Menu/CenterRow/buttons/MuteMusic" to="." method="_on_MuteMusic_toggled"]
+[connection signal="toggled" from="Menu/CenterRow/buttons/VolumeSlider2/CheckBox" to="." method="_on_CheckBox_toggled"]
 [connection signal="pressed" from="Menu/CenterRow/buttons/BackButton" to="." method="_on_BackButton_pressed"]
