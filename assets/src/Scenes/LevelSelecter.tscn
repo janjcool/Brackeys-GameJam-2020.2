@@ -162,7 +162,7 @@ margin_top = 132.0
 margin_right = 128.0
 margin_bottom = 171.0
 custom_fonts/font = SubResource( 2 )
-text = "level 4"
+text = "level 3"
 __meta__ = {
 "_edit_use_anchors_": false
 }

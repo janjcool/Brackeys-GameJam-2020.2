@@ -30,10 +30,7 @@ func _on_CenterPlayButton_pressed() -> void:
 func _on_CenterRestartButton_pressed() -> void:
 	print("restart")
 	SetPaused(false)
-	var PlayerNode = get_tree().root.get_node("LevelTemplate").get_node("Player")
-	PlayerNode.position = PlayerNode.StartPosition
-	PlayerNode.Lives = PlayerNode.StartLives
-	PlayerNode.Health = 1
+	get_tree().reload_current_scene()
 
 func _on_CenterBackButton_pressed() -> void:
 	print("back")

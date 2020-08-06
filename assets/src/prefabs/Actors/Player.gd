@@ -93,8 +93,8 @@ func Die():
 			IsDying = true
 			GunTimer = get_tree().create_timer(1.0)
 			yield(GunTimer, "timeout")
-			position = StartPosition
 			IsDying = false
+			position = StartPosition
 			Health = 1
 
 func AnimationChooser(animation):
@@ -115,7 +115,7 @@ func AnimationChooser(animation):
 		else:
 			animation = "DuckLeft"
 	elif not velocity.y == 0 and velocity.x >= 0 or not is_on_floor() and velocity.x >= 0:
-		AnimationIsLeft= false
+		AnimationIsLeft = false
 		if Shoot == true or Input.is_action_pressed("fire") and Reloading == false:
 			animation = "JumpRightAndShootRight"
 			Shoot = false

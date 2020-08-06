@@ -59,10 +59,7 @@ alignment = 1
 
 [node name="CenterPlayButton" parent="PauseMenu/Menu/CenterRow/buttons" instance=ExtResource( 4 )]
 margin_top = 51.0
-margin_right = 1024.0
 margin_bottom = 171.0
-rect_min_size = Vector2( 360, 120 )
-flat = true
 
 [node name="CenterRestartButton" parent="PauseMenu/Menu/CenterRow/buttons" instance=ExtResource( 5 )]
 margin_top = 201.0
