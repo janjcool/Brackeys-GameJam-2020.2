@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/aargh6.ogg-685d5ecf59512a04424f1fcb2f8a9895.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/aargh/aargh6.ogg"
+dest_files=[ "res://.import/aargh6.ogg-685d5ecf59512a04424f1fcb2f8a9895.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ren3.ogg-468c95b50c4ec6a2a398624db0c1b0aa.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/q009-sounds/q009/ren3.ogg"
+dest_files=[ "res://.import/ren3.ogg-468c95b50c4ec6a2a398624db0c1b0aa.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

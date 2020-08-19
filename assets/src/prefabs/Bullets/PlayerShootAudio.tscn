@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sound/q009-sounds/q009/pistol.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/src/prefabs/Bullets/PlayerShootAudio.gd" type="Script" id=2]
+
+[node name="PlayerShoot" type="AudioStreamPlayer2D"]
+stream = ExtResource( 1 )
+autoplay = true
+bus = "SoundEffects"
+script = ExtResource( 2 )
+[connection signal="finished" from="." to="." method="_on_PlayerShoot_finished"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/outofammo.ogg-653d6a6c3e75ba8ce3e26dda2dbae39a.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/q009-sounds/q009/outofammo.ogg"
+dest_files=[ "res://.import/outofammo.ogg-653d6a6c3e75ba8ce3e26dda2dbae39a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

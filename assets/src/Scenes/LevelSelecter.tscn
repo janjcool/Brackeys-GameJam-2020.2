@@ -1,0 +1,377 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/fonts/sniglet/Sniglet-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/src/prefabs/gui/BackButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/world assets/Boxes/1.png" type="Texture" id=4]
+[ext_resource path="res://assets/src/Scenes/LevelSelecter.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="Levelchooser" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1170.0
+margin_bottom = 700.0
+custom_constants/separation = 40
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Label" parent="Menu"]
+margin_right = 1120.0
+margin_bottom = 125.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "level Chooser"
+
+[node name="buttons" type="VBoxContainer" parent="Menu"]
+margin_top = 165.0
+margin_right = 1120.0
+margin_bottom = 490.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Level 1-4" type="HBoxContainer" parent="Menu/buttons"]
+margin_right = 1120.0
+margin_bottom = 147.0
+size_flags_vertical = 3
+
+[node name="Level1" type="Button" parent="Menu/buttons/Level 1-4"]
+margin_right = 277.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menu/buttons/Level 1-4/Level1"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/buttons/Level 1-4/Level1/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/buttons/Level 1-4/Level1/HBoxContainer"]
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 2 )
+text = "level 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="Button" parent="Menu/buttons/Level 1-4"]
+margin_left = 281.0
+margin_right = 558.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menu/buttons/Level 1-4/Level2"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/buttons/Level 1-4/Level2/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/buttons/Level 1-4/Level2/HBoxContainer"]
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 2 )
+text = "level 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="Button" parent="Menu/buttons/Level 1-4"]
+margin_left = 562.0
+margin_right = 839.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menu/buttons/Level 1-4/Level3"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/buttons/Level 1-4/Level3/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/buttons/Level 1-4/Level3/HBoxContainer"]
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 2 )
+text = "level 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4" type="Button" parent="Menu/buttons/Level 1-4"]
+margin_left = 843.0
+margin_right = 1120.0
+margin_bottom = 147.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menu/buttons/Level 1-4/Level4"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/buttons/Level 1-4/Level4/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/buttons/Level 1-4/Level4/HBoxContainer"]
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 2 )
+text = "level 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level 5-8" type="HBoxContainer" parent="Menu/buttons"]
+margin_top = 177.0
+margin_right = 1120.0
+margin_bottom = 325.0
+size_flags_vertical = 3
+
+[node name="Level5" type="Button" parent="Menu/buttons/Level 5-8"]
+margin_right = 277.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menu/buttons/Level 5-8/Level5"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/buttons/Level 5-8/Level5/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/buttons/Level 5-8/Level5/HBoxContainer"]
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 2 )
+text = "level 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level6" type="Button" parent="Menu/buttons/Level 5-8"]
+margin_left = 281.0
+margin_right = 558.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menu/buttons/Level 5-8/Level6"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/buttons/Level 5-8/Level6/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/buttons/Level 5-8/Level6/HBoxContainer"]
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 2 )
+text = "level 6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level7" type="Button" parent="Menu/buttons/Level 5-8"]
+margin_left = 562.0
+margin_right = 839.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menu/buttons/Level 5-8/Level7"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/buttons/Level 5-8/Level7/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/buttons/Level 5-8/Level7/HBoxContainer"]
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 2 )
+text = "level 7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level8" type="Button" parent="Menu/buttons/Level 5-8"]
+margin_left = 843.0
+margin_right = 1120.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menu/buttons/Level 5-8/Level8"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/buttons/Level 5-8/Level8/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/buttons/Level 5-8/Level8/HBoxContainer"]
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 2 )
+text = "level 8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" parent="Menu" instance=ExtResource( 2 )]
+margin_top = 530.0
+margin_right = 1120.0
+margin_bottom = 650.0
+custom_constants/hseparation = 2
+[connection signal="pressed" from="Menu/buttons/Level 1-4/Level1" to="." method="_on_Level1_pressed"]
+[connection signal="pressed" from="Menu/buttons/Level 1-4/Level2" to="." method="_on_Level2_pressed"]
+[connection signal="pressed" from="Menu/buttons/Level 1-4/Level3" to="." method="_on_Level3_pressed"]
+[connection signal="pressed" from="Menu/buttons/Level 1-4/Level4" to="." method="_on_Level4_pressed"]
+[connection signal="pressed" from="Menu/buttons/Level 5-8/Level5" to="." method="_on_Level5_pressed"]
+[connection signal="pressed" from="Menu/buttons/Level 5-8/Level6" to="." method="_on_Level6_pressed"]
+[connection signal="pressed" from="Menu/buttons/Level 5-8/Level7" to="." method="_on_Level7_pressed"]
+[connection signal="pressed" from="Menu/buttons/Level 5-8/Level8" to="." method="_on_Level8_pressed"]
+[connection signal="pressed" from="Menu/BackButton" to="." method="_on_BackButton_pressed"]

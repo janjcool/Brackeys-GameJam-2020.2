@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/grenade.ogg-4ba326e1a0ccaf08f7cadf6f43299f35.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/q009-sounds/q009/grenade.ogg"
+dest_files=[ "res://.import/grenade.ogg-4ba326e1a0ccaf08f7cadf6f43299f35.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

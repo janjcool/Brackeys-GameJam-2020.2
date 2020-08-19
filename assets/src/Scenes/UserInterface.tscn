@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/src/prefabs/gui/CenterBackButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/src/Scenes/PauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/blocky/blocky.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/src/prefabs/gui/CenterPlayButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/src/prefabs/gui/CenterRestartButton.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 3 )
+
+[node name="UserInterface" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" type="Node2D" parent="."]
+visible = false
+
+[node name="Menu" type="VBoxContainer" parent="PauseMenu"]
+margin_left = 87.9277
+margin_top = 81.7818
+margin_right = 1111.93
+margin_bottom = 671.782
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PauseMenu/Menu"]
+margin_right = 1024.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "Pause"
+align = 1
+
+[node name="CenterRow" type="HBoxContainer" parent="PauseMenu/Menu"]
+margin_top = 68.0
+margin_right = 1024.0
+margin_bottom = 590.0
+size_flags_vertical = 3
+
+[node name="buttons" type="VBoxContainer" parent="PauseMenu/Menu/CenterRow"]
+margin_right = 1024.0
+margin_bottom = 522.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="CenterPlayButton" parent="PauseMenu/Menu/CenterRow/buttons" instance=ExtResource( 4 )]
+margin_top = 51.0
+margin_bottom = 171.0
+
+[node name="CenterRestartButton" parent="PauseMenu/Menu/CenterRow/buttons" instance=ExtResource( 5 )]
+margin_top = 201.0
+margin_bottom = 321.0
+
+[node name="CenterBackButton" parent="PauseMenu/Menu/CenterRow/buttons" instance=ExtResource( 1 )]
+margin_top = 351.0
+margin_bottom = 471.0
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.156863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_fonts/font = SubResource( 2 )
+text = "50/50 magazine
+lives: 2"
+[connection signal="pressed" from="PauseMenu/Menu/CenterRow/buttons/CenterPlayButton" to="." method="_on_CenterPlayButton_pressed"]
+[connection signal="pressed" from="PauseMenu/Menu/CenterRow/buttons/CenterRestartButton" to="." method="_on_CenterRestartButton_pressed"]
+[connection signal="pressed" from="PauseMenu/Menu/CenterRow/buttons/CenterBackButton" to="." method="_on_CenterBackButton_pressed"]
