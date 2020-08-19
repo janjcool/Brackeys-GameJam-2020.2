@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/fonts/sniglet/50dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/fonts/recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/src/Scenes/CreditScreen.gd" type="Script" id=3]
+[ext_resource path="res://assets/src/prefabs/gui/BackButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/icons/BigBackGround.png" type="Texture" id=5]
+[ext_resource path="res://assets/src/prefabs/gui/fadeIn.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="CreditScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 88.0
+margin_top = 82.0
+margin_right = 1209.0
+margin_bottom = 704.0
+focus_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu"]
+margin_right = 1121.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "Credit"
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_top = 64.0
+margin_right = 1121.0
+margin_bottom = 563.0
+focus_mode = 2
+size_flags_vertical = 3
+
+[node name="buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 1121.0
+margin_bottom = 499.0
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="Menu/CenterRow/buttons"]
+margin_right = 1121.0
+margin_bottom = 349.0
+custom_fonts/font = SubResource( 1 )
+text = "
+
+Music is from: Joe Reynolds - Professorlamp please check out his website: jrtheories.webs.com
+The night sky background is from: kvsr.itch.io
+The swamp sprite sheet is from: 0x72.itch.io
+The Characters and Enemys come from: quintino-pixels.itch.io
+
+
+
+
+"
+
+[node name="BackButton" parent="Menu/CenterRow/buttons" instance=ExtResource( 4 )]
+margin_top = 379.0
+margin_right = 1121.0
+margin_bottom = 499.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="VersionLabel" type="Label" parent="Menu"]
+margin_top = 582.0
+margin_right = 1121.0
+margin_bottom = 606.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 3 )
+text = "Thanks To all the people who share their creations for free."
+
+[node name="fadeIn" parent="." instance=ExtResource( 6 )]
+visible = false
+[connection signal="pressed" from="Menu/CenterRow/buttons/BackButton" to="." method="_on_BackButton_pressed"]

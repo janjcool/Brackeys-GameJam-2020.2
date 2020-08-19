@@ -1,14 +1,20 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://assets/fonts/sniglet/Sniglet-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/icons/BigBackGround.png" type="Texture" id=1]
 [ext_resource path="res://assets/src/prefabs/gui/BackButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/fonts/recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/world assets/Boxes/1.png" type="Texture" id=4]
+[ext_resource path="res://assets/icons/CaveBlock.png" type="Texture" id=4]
 [ext_resource path="res://assets/src/Scenes/LevelSelecter.gd" type="Script" id=5]
+[ext_resource path="res://assets/icons/GrassBlock.png" type="Texture" id=6]
+[ext_resource path="res://assets/icons/GrassPlatform.png" type="Texture" id=7]
+[ext_resource path="res://assets/icons/SwampBlock.png" type="Texture" id=8]
+[ext_resource path="res://assets/icons/WasteLandBlock.png" type="Texture" id=9]
+[ext_resource path="res://assets/fonts/blocky/blocky.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="DynamicFont" id=1]
-size = 100
-font_data = ExtResource( 1 )
+size = 70
+extra_spacing_space = -30
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
@@ -18,6 +24,14 @@ font_data = ExtResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -33,17 +47,17 @@ __meta__ = {
 }
 
 [node name="Settings" type="Label" parent="Menu"]
-margin_right = 1120.0
-margin_bottom = 125.0
+margin_right = 1130.0
+margin_bottom = 70.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
-text = "level Chooser"
+text = "Select your level"
 
 [node name="buttons" type="VBoxContainer" parent="Menu"]
-margin_top = 165.0
-margin_right = 1120.0
+margin_top = 110.0
+margin_right = 1130.0
 margin_bottom = 490.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -51,13 +65,13 @@ custom_constants/separation = 30
 alignment = 1
 
 [node name="Level 1-4" type="HBoxContainer" parent="Menu/buttons"]
-margin_right = 1120.0
-margin_bottom = 147.0
+margin_right = 1130.0
+margin_bottom = 175.0
 size_flags_vertical = 3
 
 [node name="Level1" type="Button" parent="Menu/buttons/Level 1-4"]
-margin_right = 277.0
-margin_bottom = 147.0
+margin_right = 279.0
+margin_bottom = 175.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
@@ -77,7 +91,7 @@ margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 4 )
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -93,9 +107,9 @@ __meta__ = {
 }
 
 [node name="Level2" type="Button" parent="Menu/buttons/Level 1-4"]
-margin_left = 281.0
-margin_right = 558.0
-margin_bottom = 147.0
+margin_left = 283.0
+margin_right = 562.0
+margin_bottom = 175.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
@@ -115,7 +129,7 @@ margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 4 )
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -131,9 +145,9 @@ __meta__ = {
 }
 
 [node name="Level3" type="Button" parent="Menu/buttons/Level 1-4"]
-margin_left = 562.0
-margin_right = 839.0
-margin_bottom = 147.0
+margin_left = 566.0
+margin_right = 845.0
+margin_bottom = 175.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
@@ -152,7 +166,7 @@ margin_right = 128.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
 size_flags_horizontal = 3
-texture = ExtResource( 4 )
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -168,9 +182,9 @@ __meta__ = {
 }
 
 [node name="Level4" type="Button" parent="Menu/buttons/Level 1-4"]
-margin_left = 843.0
-margin_right = 1120.0
-margin_bottom = 147.0
+margin_left = 849.0
+margin_right = 1130.0
+margin_bottom = 175.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
@@ -187,9 +201,12 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="Menu/buttons/Level 1-4/Level4/HBoxContainer"]
 margin_right = 128.0
 margin_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 rect_min_size = Vector2( 128, 128 )
 size_flags_horizontal = 3
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
+stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -205,14 +222,14 @@ __meta__ = {
 }
 
 [node name="Level 5-8" type="HBoxContainer" parent="Menu/buttons"]
-margin_top = 177.0
-margin_right = 1120.0
-margin_bottom = 325.0
+margin_top = 205.0
+margin_right = 1130.0
+margin_bottom = 380.0
 size_flags_vertical = 3
 
 [node name="Level5" type="Button" parent="Menu/buttons/Level 5-8"]
-margin_right = 277.0
-margin_bottom = 148.0
+margin_right = 279.0
+margin_bottom = 175.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
@@ -232,7 +249,8 @@ margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
+stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -248,9 +266,9 @@ __meta__ = {
 }
 
 [node name="Level6" type="Button" parent="Menu/buttons/Level 5-8"]
-margin_left = 281.0
-margin_right = 558.0
-margin_bottom = 148.0
+margin_left = 283.0
+margin_right = 562.0
+margin_bottom = 175.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
@@ -270,7 +288,7 @@ margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 4 )
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -286,9 +304,9 @@ __meta__ = {
 }
 
 [node name="Level7" type="Button" parent="Menu/buttons/Level 5-8"]
-margin_left = 562.0
-margin_right = 839.0
-margin_bottom = 148.0
+margin_left = 566.0
+margin_right = 845.0
+margin_bottom = 175.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
@@ -324,9 +342,9 @@ __meta__ = {
 }
 
 [node name="Level8" type="Button" parent="Menu/buttons/Level 5-8"]
-margin_left = 843.0
-margin_right = 1120.0
-margin_bottom = 148.0
+margin_left = 849.0
+margin_right = 1130.0
+margin_bottom = 175.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 flat = true
@@ -363,7 +381,7 @@ __meta__ = {
 
 [node name="BackButton" parent="Menu" instance=ExtResource( 2 )]
 margin_top = 530.0
-margin_right = 1120.0
+margin_right = 1130.0
 margin_bottom = 650.0
 custom_constants/hseparation = 2
 [connection signal="pressed" from="Menu/buttons/Level 1-4/Level1" to="." method="_on_Level1_pressed"]

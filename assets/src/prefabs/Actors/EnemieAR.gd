@@ -41,7 +41,7 @@ func _ready():
 	Distance = randi()%DistanceMax+1
 	WaitTime = randi()%MaxWaitTime+1
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	PlayerPosition = get_tree().root.get_node("LevelTemplate").get_node("Player").get_global_position()
 	LookForPlayer()
 	
@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 	AnimationChooser()
 	get_node("AnimationPlayer").play(AnimationType)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	Velocity = Vector2()
 	calculate_move_velocity()
 	if Dying == false:
@@ -69,7 +69,7 @@ func SeePlayerProcess():
 	Fire()
 
 func Die():
-	if health < 0:
+	if health < 0 and Dying == false:
 		get_node("CollisionShape2D").set_disabled(true)
 		Dying = true
 		GunTimer = get_tree().create_timer(2)

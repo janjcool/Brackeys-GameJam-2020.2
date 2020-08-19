@@ -6,5 +6,5 @@ func _ready():
 	get_node("AnimationPlayer/AudioPlayer").position = get_global_position()
 	get_node("AnimationPlayer/Sprite").position = get_global_position()
 
-func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
+func _on_AnimationPlayer_animation_finished(_anim_name: String) -> void:
 	queue_free()

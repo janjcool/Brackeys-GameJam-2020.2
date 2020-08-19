@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/fonts/blocky/blocky.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/fonts/recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf" type="DynamicFontData" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://assets/src/prefabs/gui/MainMenuButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/src/prefabs/gui/ExitButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/src/prefabs/gui/fadeIn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/icons/BigBackGround.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 70
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 2 )
 
@@ -19,6 +20,14 @@ font_data = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -54,14 +63,14 @@ margin_right = 1024.0
 margin_bottom = 180.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 10
 custom_constants/line_spacing = 50
 custom_constants/shadow_offset_y = 10
 custom_constants/shadow_as_outline = 0
-text = "you win"
+text = "Victory"
 align = 1
 
 [node name="ExitButton" parent="Menu/CenterRow/buttons" instance=ExtResource( 5 )]
@@ -78,7 +87,7 @@ margin_top = 694.652
 margin_right = 1178.87
 margin_bottom = 733.652
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Thanks for playing my game"
 __meta__ = {
 "_edit_use_anchors_": false

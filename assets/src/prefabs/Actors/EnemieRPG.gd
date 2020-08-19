@@ -17,11 +17,12 @@ var bullet = preload("res://assets/src/prefabs/Bullets/BulletEnemieRPG.tscn")
 func _ready() -> void:
 	PlayerNode = get_tree().root.get_node("LevelTemplate").get_node("Player")
 	GunTimer = get_tree().create_timer(FireRate)
+	get_node("Animation").play("Idle")
 	
 	if flip:
 		BulletSpeed = BulletSpeed*-1
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	Die()
 	LookForPlayer()
 	if PlayerInRange == true:

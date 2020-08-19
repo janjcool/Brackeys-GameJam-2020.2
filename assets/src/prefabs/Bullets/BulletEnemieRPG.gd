@@ -4,9 +4,11 @@ var explosion = preload("res://assets/src/prefabs/Bullets/AnimationBulletEnemieR
 var PlayerHealth
 var Damage
 var BulletLifeTime
+var DestoryTimer
 
 func _ready() -> void:
-	yield(get_tree().create_timer(BulletLifeTime), "timeout")
+	DestoryTimer = get_tree().create_timer(BulletLifeTime)
+	yield(DestoryTimer, "timeout")
 	queue_free()
 
 func _on_BulletEnemieRPG_body_entered(body: Node) -> void:
@@ -22,4 +24,5 @@ func _on_BulletEnemieRPG_body_entered(body: Node) -> void:
 		var ExplosionInstance = explosion.instance()
 		ExplosionInstance.position = get_global_position()
 		get_tree().get_root().add_child(ExplosionInstance)
+		
 		queue_free()

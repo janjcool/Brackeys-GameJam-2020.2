@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/src/prefabs/Actors/EnemieRPG.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Background/Background.png" type="Texture" id=2]
 [ext_resource path="res://assets/src/Levels/LevelTemplate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/src/prefabs/misc/DeadBox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/world assets/Pointers/5.png" type="Texture" id=5]
 
 [node name="LevelTemplate" instance=ExtResource( 3 )]
 
@@ -42,3 +43,7 @@ NextLevel = "res://assets/src/Levels/Level6.tscn"
 
 [node name="DeadBox" parent="." index="8" instance=ExtResource( 4 )]
 position = Vector2( 2349.64, 2968.84 )
+
+[node name="1" type="Sprite" parent="." index="9"]
+position = Vector2( 538.561, 783.427 )
+texture = ExtResource( 5 )
